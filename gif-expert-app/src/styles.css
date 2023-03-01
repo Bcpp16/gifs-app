@@ -6,6 +6,7 @@
   --skyblue: #40c9ff;
   --pink: #e81cff;
   --violet: #a27fef;
+  --black: #0c090d;
 }
 
 * {
@@ -15,12 +16,10 @@
 body {
   width: 85%;
   margin: 0 auto;
-  background-color: #0c090d;
+  background-color: var(--black);
   font-family: "Quicksand", sans-serif;
   color: var(--white);
 }
-
-/* HEADER : TITLE */
 
 .container-title {
   display: flex;
@@ -35,7 +34,7 @@ body {
 }
 
 .title-span {
-  color: #0c090d;
+  color: var(--black);
   background: -webkit-linear-gradient(
     -86deg,
     var(--skyblue) 5%,
@@ -50,8 +49,6 @@ body {
   width: 8rem;
   margin-left: 1rem;
 }
-
-/* SEARCH */
 
 form {
   margin: 0 auto;
@@ -72,7 +69,7 @@ input {
 }
 
 input[type="text"] {
-  font-size: 1rem;
+  font-size: 1.1rem;
   color: var(--violet);
   border: 1px solid var(--violet);
   outline: none;
@@ -82,8 +79,6 @@ input[type="text"]:focus {
   border: 2px solid var(--violet);
   color: var(--white);
 }
-
-/* MAIN: TITLE, CARDS AND LOADING*/
 
 .loading {
   margin: 0 auto;
@@ -104,11 +99,20 @@ h2 {
 .row {
   display: flex;
   flex-wrap: wrap;
+  margin-bottom: 5rem;
 }
 
 .column {
   flex: 25%;
-  padding: 4px 4px;
+  padding: 0.4rem 0.4rem;
+  position: relative;
+
+  cursor: pointer;
+}
+
+.column a{
+  text-decoration: none;
+  padding: 0;
 }
 
 .column > img {
@@ -121,9 +125,42 @@ img {
   border-radius: 5px;
 }
 
+.container-name-gif {
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  height: 6rem;
+  margin: 0.4rem 0.4rem;
+  background: rgba(0, 0, 0, 0.5);
+  backdrop-filter: blur(6.5px);
+  visibility: hidden;
+}
+
+.column:hover .container-name-gif {
+  visibility: visible;
+}
+
+.icon{
+  color: var(--pink);
+}
+
+.link-name-gif {
+  text-decoration: none;
+}
+
+.link-name-gif p {
+  color: var(--white);
+  padding: 0.4rem 0.4rem;
+}
 
 
-/* RESPONSIVE */
+ .link-card{
+
+
+ }
+
+
 
 @media screen and (max-width: 800px) {
   .column {
@@ -153,17 +190,11 @@ img {
   }
 }
 
-
-
-
-@media screen and (max-width: 600px) {
+@media screen and (max-width: 500px) {
   .title {
     font-size: 3rem;
   }
 }
-
-
-
 
 @media screen and (max-width: 400px) {
   .title {

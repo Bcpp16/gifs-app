@@ -14,7 +14,7 @@ function GifItem({ title, url, id }) {
       </div>
 
     </div>
-  );
+  )
 }
 
 export default GifItem;
